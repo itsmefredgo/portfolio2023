@@ -1,0 +1,134 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0 auto;
+	padding: 0;
+  height: 100vh;
+  max-width: 1440px;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+}
+
+input, button, select, textarea {
+  -webkit-appearance: none;
+  outline: none;
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  border-top: 1px solid #DCDCDC;
+  height: 55px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  width: 1148px;
+}
+
+/* Nav height = 65, Footer = 60 */
+main {
+  min-height: calc(100vh - 65px - 60px);
+}
+
+.mainBtn {
+  background-color: #2563EB;
+  height: 38px;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 600;
+  padding: 4px 25px;
+  width: 100%;
+}
+
+.ghostBtn {
+  background-color: transparent;
+  border: 1px solid #DCDCDC;
+  height: 38px;
+  color: #424242;
+  border-radius: 3px;
+  font-weight: 500;
+  padding: 4px 25px;
+}
+
+/* Header */
+
+.navbarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #DCDCDC;
+  height: 65px;
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+}
+
+.rightWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 700px;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  max-width: 350px;
+  width: 100%;
+}
+
+.searchIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.searchInput {
+  border: none;
+}
+
+.userWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.userAvatar {
+  height: 40px;
+  width: 40px;
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
