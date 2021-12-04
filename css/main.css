@@ -70,6 +70,14 @@ main {
   border-radius: 3px;
   font-weight: 500;
   padding: 4px 25px;
+  width: 100%;
+}
+
+.sectionHeader {
+  color: #374151;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 1rem 0;
 }
 
 /* Header */
@@ -124,6 +132,7 @@ main {
 .userAvatar {
   height: 40px;
   width: 40px;
+  border-radius: 50%;
 }
 
 .buttonsWrapper {
@@ -131,4 +140,119 @@ main {
   align-items: center;
   gap: 1rem;
 }
+
+/* Profile */
+
+.profileAvatar {
+  height: 150px;
+  width: 150px;
+}
+
+.userDetails {
+  display: flex;
+  gap: 2rem;
+}
+
+.userInfoWrapper {
+  width: 700px;
+}
+
+.userInfoTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userName {
+  font-size: 1.8rem;
+  color: #4B5563;
+  font-weight: bold;
+  width: 100%;
+}
+
+.userInfo {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.recentBlogs {
+  margin-top: 2rem;
+}
+
+.editProfileLink {
+  background-color: #2563EB;
+  height: 38px;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 600;
+  padding: 0 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Edit Profile */
+
+.editProfileForm {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.avatarUpload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.inputsWrapper {
+  display: grid;
+  gap: 1rem;
+  width: 500px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.authInput {
+  border: 1px solid rgba(172, 172, 172, 1);
+  height: 35px;
+  border-radius: 3px;
+  padding-left: 10px;
+}
+
+.authTextarea {
+  padding: 8px;
+  height: 80px;
+  border-radius: 3px;
+  border: 1px solid rgba(172, 172, 172, 1);
+}
+
+.editProfileBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.editProfileCancel {
+  background-color: transparent;
+  border: 1px solid rgba(172, 172, 172, 1);
+  height: 38px;
+  color: #424242;
+  border-radius: 3px;
+  font-weight: 500;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
