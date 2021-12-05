@@ -1,0 +1,74 @@
+/*
+ * @license
+ *
+ * Font Family: Author
+ * Designed by: Satya Rajpurohit
+ * URL: https://www.fontshare.com/fonts/author
+ * © 2021 Indian Type Foundry
+*/
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 200;
+  src: url('./Author/Author-Extralight.woff2') format('woff2'),
+       url('./Author/Author-Extralight.woff') format('woff'),
+       url('./Author/Author-Extralight.ttf') format('truetype');
+       font-weight: 200;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 300;
+  src: url('./Author/Author-Light.woff2') format('woff2'),
+       url('./Author/Author-Light.woff') format('woff'),
+       url('./Author/Author-Light.ttf') format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 400;
+  src: url('./Author/Author-Regular.woff2') format('woff2'),
+       url('./Author/Author-Regular.woff') format('woff'),
+       url('./Author/Author-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 500;
+  src: url('./Author/Author-Medium.woff2') format('woff2'),
+       url('./Author/Author-Medium.woff') format('woff'),
+       url('./Author/Author-Medium.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 600;
+  src: url('./Author/Author-Semibold.woff2') format('woff2'),
+       url('./Author/Author-Semibold.woff') format('woff'),
+       url('./Author/Author-Semibold.ttf') format('truetype');
+       font-weight: 600;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 700;
+  src: url('./Author/Author-Bold.woff2') format('woff2'),
+       url('./Author/Author-Bold.woff') format('woff'),
+       url('./Author/Author-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
