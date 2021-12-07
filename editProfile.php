@@ -1,6 +1,5 @@
 <?php
 require_once "includes/header.php";
-include("includes/functions.php");
 
 //get user info
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';

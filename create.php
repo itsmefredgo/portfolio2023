@@ -1,6 +1,5 @@
 <?php
 require_once "includes/header.php";
-include("includes/functions.php");
 
 function get_file_name($len) {
     $new_file_name = 'S_';

@@ -1,6 +1,5 @@
 <?php
 require_once "includes/header.php";
-include("includes/functions.php");
 
 //get profile info
 $author = isset($_GET['author']) ? intval($_GET['author']) : 0;
