@@ -26,23 +26,22 @@
 </head>
 <body>
 <div class="container p20">
-    <div class="row flex-a-center flex-warp">
-        <div class="col-xs-9 col-sm-9 col-lg-4 col-md-4 row" >
+    <div class="row flex-a-center flex-wrap">
+        <div class="col-xs-9 col-sm-9 col-lg-4 col-md-4 row flex-a-center" >
             <div class="col-xs-5 col-sm-5 col-lg-3 col-md-3">
                 <a href="index.php">
                     <img src="assets/img/header.png" width="50" height="50" class="b-radius-50">
                 </a>
             </div>
-            <div class="col-xs-7 col-sm-7 col-lg-7 col-md-7">
-                <h5>Blog Logo</h5>
-                <h5>Public Blog</h5>
-            </div>
+            
+            <h3 class="blog-title">Spyder Blogs</h3>
+            
         </div>
 
         <div class="hidden-xs hidden-sm col-lg-4 col-md-4"></div>
-        <div class="hidden-xs hidden-sm col-lg-2 col-md-2">
+        <form class="hidden-xs hidden-sm col-lg-2 col-md-2 search-form">
             <input class="form-control input-sm" type="search" placeholder="Search blogs" name="search"> <i class="glyphicon glyphicon-search search-icon-position do-search"></i>
-        </div>
+        </form>
         <?php if (!isset($login_id)) { ?>
         <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
             <a href="login.php" class="btn btn-default btn-sm">Login</a>

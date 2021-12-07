@@ -55,4 +55,13 @@ $(document).ready(function(){
         }
         window.location.href = 'index.php?keyword=' + keyword;
     });
+
+    $('.search-form').submit(function(e) {
+      e.preventDefault();
+      var keyword = $('[name="search"]').val();
+      if (keyword.length == 0) {
+          return;
+      }
+      window.location.href = 'index.php?keyword=' + keyword;
+    })
 });

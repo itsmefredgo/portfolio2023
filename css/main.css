@@ -145,6 +145,10 @@ main {
   gap: 1rem;
 }
 
+.blog-title {
+  margin: 0;
+}
+
 /* Profile */
 
 .profileAvatar {
