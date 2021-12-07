@@ -159,6 +159,7 @@ main {
   gap: 1rem;
 }
 
+<<<<<<< HEAD
 #header-logo-text a{
   color: black;
 }
@@ -169,6 +170,10 @@ main {
 #logout-button:hover {
   color: #2980b9;
   text-decoration: underline;
+=======
+.blog-title {
+  margin: 0;
+>>>>>>> bc68e4bc531727a6651890b8b8c8869bf210bf41
 }
 
 /* Profile */
