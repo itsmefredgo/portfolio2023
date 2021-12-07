@@ -1,5 +1,5 @@
 <?php
-  require_once "accessControl.php";
+//  require_once "accessControl.php";
 
   // Initialize the session.
   // If you are using session_name("something"), don't forget it now!
@@ -22,6 +22,6 @@
   session_destroy();
 
   // redirect user to home page
-  header('Location: ../index.php?show=login');
+  header('Location: ../index.php');
   die();
 ?>

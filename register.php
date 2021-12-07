@@ -1,5 +1,39 @@
 <?php
-  // DB Connection Here
+// DB Connection Here
+$error_msg = '';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once 'db/connect.php';
+    $email = htmlspecialchars($_POST['email']);
+    $password = htmlspecialchars($_POST['password']);
+    $full_name = htmlspecialchars($_POST['fullName']);
+
+    $password = password_hash($password, PASSWORD_BCRYPT);
+
+    $sql = 'insert into login (`author_email`, `author_password`) value ("'.$email.'", "'.$password.'")';
+
+    $result = $conn->query($sql);
+    if ($result) {
+        $login_id = $conn->insert_id;
+        // insert author
+        $full_name = explode(' ', $full_name);
+        $first_name = $full_name[0];
+        $last_name = isset($full_name[1]) ? $full_name[1] : '';
+        $sql = 'insert into author (`author_fname`, `author_lname`, `author_phone`, `author_type`, `author_intro`, `login_id`) value ("'.$first_name.'", "'.$last_name.'", "", "", "", '.$login_id.')';
+        $res = $conn->query($sql);
+        if ($res) {
+            // register success
+            header('Location:login.php');die;
+        } else {
+            $error_msg = 'Register fail.';
+        }
+    } elseif ($conn->errno == 1062) {
+        $error_msg = 'The email already exists. Please choose another.';
+    } else {
+        die('Error executing query：' . $conn->errno . ' ' . $conn->error);
+    }
+}
+
+
 ?>
 
 <!-- Jamel's Code -->

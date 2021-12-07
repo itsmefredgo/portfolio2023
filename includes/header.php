@@ -1,55 +1,58 @@
 <?php
 	session_start();
 	require_once "db/connect.php";
+	if (isset($_SESSION['user'])) {
+	    $user = $_SESSION['user'];
+        $login_id = $user['user_login_id'];
+        $sql = 'select author.*,login.author_email from author join login on author.login_id = login.author_id where author.login_id = ' . $login_id;
+        $result = $conn->query($sql);
+        $user_info = $result->fetch_assoc();
+    }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Spider Blogs</title>
-	<link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Blog</title>
 </head>
 <body>
-  <section class="navbarWrapper">
-      <header>
-        <img class="logo" src="https://livejones.com/wp-content/uploads/2020/05/logo-Placeholder.png" alt="Brand logo">
-      </header>
-
-      <section class="rightWrapper">
-        <div class="searchbar">
-          <div class="searchIcon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-        
-          <input class="searchInput" type="text" placeholder="Search Blogs">
+<div class="container p20">
+    <div class="row flex-a-center flex-warp">
+        <div class="col-xs-9 col-sm-9 col-lg-4 col-md-4 row" >
+            <div class="col-xs-5 col-sm-5 col-lg-3 col-md-3">
+                <a href="index.php">
+                    <img src="assets/img/header.png" width="50" height="50" class="b-radius-50">
+                </a>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-lg-7 col-md-7">
+                <h5>Blog Logo</h5>
+                <h5>Public Blog</h5>
+            </div>
         </div>
 
-        <?php
-          if (isset($_SESSION['name'])) {
-            echo "
-              <div class='userWrapper'>
-                <img class='userAvatar' src='https://st4.depositphotos.com/4329009/19956/v/380/depositphotos_199564354-stock-illustration-creative-vector-illustration-default-avatar.jpg' alt='User Avatar'>
-                <span>Allen Walker</span>
-              </div>
-            ";
-          } else {
-            echo "
-              <div class='buttonsWrapper'>
-                <button class='ghostBtn'>Login</button>
-                <button class='mainBtn'>Register</button>
-              </div>
-            ";
-          }
-        ?>
-
-      
-      </section>
-
-      
-    
-  </section>
+        <div class="hidden-xs hidden-sm col-lg-4 col-md-4"></div>
+        <div class="hidden-xs hidden-sm col-lg-2 col-md-2">
+            <input class="form-control input-sm" type="search" placeholder="Search blogs" name="search"> <i class="glyphicon glyphicon-search search-icon-position do-search"></i>
+        </div>
+        <?php if (!isset($login_id)) { ?>
+        <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+            <a href="login.php" class="btn btn-default btn-sm">Login</a>
+            <a href="register.php" class="btn btn-default btn-sm">Register</a>
+        </div>
+        <?php } else { ?>
+        <div class="col-xs-3 col-sm-3 col-lg-2 col-md-2">
+            <a href="profile.php"><img src="assets/img/header.png" width="30" height="30" class="b-radius-50"></a>
+            <a href="includes/logout.php"><span class="ml20 hidden-xs hidden-sm"><?php echo $user_info['author_fname'] . ' ' . $user_info['author_lname']; ?></span></a>
+        </div>
+        <?php } ?>
+    </div>
+    <hr>

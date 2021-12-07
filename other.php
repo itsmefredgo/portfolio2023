@@ -3,13 +3,18 @@ require_once "includes/header.php";
 include("includes/functions.php");
 
 //get profile info
-$user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
-if (empty($user)) header('Location:index.php');
-
+$author = isset($_GET['author']) ? intval($_GET['author']) : 0;
+if (empty($author)) {
+    header('Location:index.php');
+    die;
+}
+$sql = 'select author.*,login.author_email from author join login on author.login_id = login.author_id where author.login_id = ' . $author;
+$result = $conn->query($sql);
+$user_info = $result->fetch_assoc();
 
 //get recent blogs
 $data = [];
-$sql = 'select blog.*,author.author_fname, author.author_lname from blog join author on blog.author_id = author.login_id where blog.author_id = '.$login_id.' order by blog.blog_id desc limit 2';
+$sql = 'select blog.*,author.author_fname, author.author_lname from blog join author on blog.author_id = author.login_id where blog.author_id = '.$author.' order by blog.blog_id desc limit 2';
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc()) {
     //get tags
@@ -27,7 +32,7 @@ while ($row = $result->fetch_assoc()) {
 
 <main>
     <section class="profile">
-        <h2 class="sectionHeader">My Profile</h2>
+        <h2 class="sectionHeader">Author Profile</h2>
 
         <div class="userDetails">
             <img class="profileAvatar" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/great-ocean-road-174028267-1494616481.jpg" alt="User Avatar">
@@ -38,19 +43,19 @@ while ($row = $result->fetch_assoc()) {
                     <?php
                     /*
                     if ($_SESSION['name'] === $_GET['profileId']) {
-                      echo "
-                        <button class='mainBtn'>Edit Profile</button>
-                      ";
+                    echo "
+                    <button class='mainBtn'>Edit Profile</button>
+                    ";
                     } else {
-                      echo "
-                        <button class='mainBtn'>Follow</button>
-                      ";
+                    echo "
+                    <button class='mainBtn'>Follow</button>
+                    ";
                     }
                     */
 
                     ?>
 
-                    <a class="editProfileLink" href="editProfile.php">Edit Profile</a>
+                    <a class="editProfileLink" href="javascript:void(0)" id="follow-author" data-author-id="<?php echo $author; ?>">Follow Author</a>
 
 
                 </div>
@@ -63,7 +68,6 @@ while ($row = $result->fetch_assoc()) {
             </div>
         </div>
     </section>
-
     <section class="recentBlogs">
         <h2 class="sectionHeader">Recent Blogs</h2>
         <hr>

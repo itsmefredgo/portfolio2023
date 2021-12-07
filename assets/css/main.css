@@ -1,0 +1,122 @@
+.p10{
+    padding: 10px !important;
+}
+.p20{
+    padding: 20px !important;
+}
+.pr20{
+    padding-right: 20px !important;
+}
+.m10{
+    margin: 10px;
+}
+.w-p-30{
+    width: 30% !important;
+}
+.float-right{
+    float: right;
+}
+.margin-auto{
+    margin: 0 auto;
+}
+.w-center{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+}
+.search-icon-position{
+    position: absolute;
+    left: 83%;
+    color: #ccc;
+    top: 8px;
+}
+.b-radius-50{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.ml20{
+    margin-left: 20px;
+}
+.ml10{
+    margin-left: 10px;
+}
+.mr10{
+    margin-right: 10px;
+}
+.mb10{
+    margin-bottom: 10px !important;
+}
+.flex-a-center{
+    display: flex;
+    align-items: center;
+}
+.flex{
+    display: flex;
+}
+.flex-warp{
+    flex-wrap: wrap;
+}
+.flex-1{
+    flex: 1;
+}
+.mt50{
+    margin-top: 50px;
+}
+.mt10{
+    margin-top: 10px;
+}
+.mt30{
+    margin-top: 30px;
+}
+.b-r-ddd{
+    border-right: 1px solid #ddd;
+}
+.tab-active{
+    border-bottom: 1px solid brown;
+}
+.tab-active a{
+    color: black !important;
+}
+/*所有(包含以下四种样式)*/
+a{
+    text-decoration:none;/*去掉a标签下划线*/
+    color: #999;
+}
+ 
+/*未被访问的链接*/
+a:link{
+    text-decoration:none;
+}
+ 
+/*访问过的*/
+a:visited{
+    text-decoration:none;
+}
+ 
+/*鼠标划过（停留）*/
+a:hover{
+    text-decoration:none;
+}
+ 
+/*正在点击*/
+a:active{
+    text-decoration:none;
+}
+.c-ddd{
+    color: #ddd;
+}
+.text-follow-5{
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}

@@ -12,8 +12,3 @@
 
 1. The session destroy code is considered to be standard / best-practice implementation. It is available as Example #1 on: http://php.net/manual/en/function.session-destroy.php Accessed on 4 Dec 2021.
 2. 
-
-
-
-
-
