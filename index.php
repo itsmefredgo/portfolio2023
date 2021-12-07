@@ -13,6 +13,7 @@ $tab = isset($_GET['tab']) ? intval($_GET['tab']) : 1;
 $tag = isset($_GET['tag']) ? htmlspecialchars($_GET['tag']) : '';
 $keyword = isset($_GET['keyword']) ? htmlspecialchars($_GET['keyword']) : '';
 $data = [];
+//THIS SECTION PRINTS BLOGS OF FOLLOWING AUTHORS ONLY, AVAILALBE FUNCTION TO LOGGED IN USERS ONLY
 switch ($tab) {
     case 2:
         //get follow blogs
@@ -41,6 +42,8 @@ switch ($tab) {
             }
         }
         break;
+
+//THIS SECTION PRINTS BLOGS THAT ARE MARKED AS READ_LATER, AVAILALBE FUNCTION TO LOGGED IN USERS ONLY
     case 3:
         //get read later blogs
         $blog_ids = [];
@@ -70,6 +73,8 @@ switch ($tab) {
 
         break;
     default:
+
+    //IF NOTHING IS SELECTED, PRINTS ALL RECENT BLOGS. AVAILABLE TO ALL USERS.
         //get all blogs
         $sql = 'select blog.*,author.author_fname, author.author_lname from blog join author on blog.author_id = author.login_id order by blog.blog_id desc';
         if (!empty($keyword)) {
@@ -106,6 +111,7 @@ switch ($tab) {
 
 ?>
 
+<!--THIS SECTION PRINTS AND ITERACTS WITH THE USER WITH TAG FUNCTION-->
 <main>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-lg-9 col-md-9">
@@ -150,6 +156,7 @@ switch ($tab) {
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-lg-3 col-md-3">
+<!--USER CAN CLICK HERE TO CREATE A BLOG-->
             <div >
                 <a class="btn btn-default btn-sm" href="create.php">Create my Blog  <i class="glyphicon glyphicon-plus ml10"></i></a>
             </div>

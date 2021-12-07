@@ -27,11 +27,11 @@ while ($row = $result->fetch_assoc()) {
 
 ?>
 
+<!--THIS SECTION WILL PRINT A BLOG SELECTED FROM HOMEPAGE OR USER INFO PAGES. -->
 <main>
-
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-lg-9 col-md-9">
-            <h6>Main Blog</h6>
+        <div id="post-show" class="col-xs-12 col-sm-12 col-lg-9 col-md-9">
+            <h6>Post</h6>
             <div class='row p20'>
                 <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
                     <img src="<?php echo $blog_info['blog_preview']; ?>" style="width:100%;padding: 50px;">
@@ -39,10 +39,10 @@ while ($row = $result->fetch_assoc()) {
                 <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
                     <div class="mt20">
                         <div class="pull-left">
-                            <p class="blog-title"><?php echo $blog_info['blog_title']; ?></p>
+                            <p class="blog-title">Title: <?php echo $blog_info['blog_title']; ?></p>
                             <div class="flex">
                                 <p class="mr20"><a href="other.php?author=<?php echo $blog_info['author_id']; ?>"><?php echo $blog_info['author_fname'].' ' . $blog_info['author_lname']; ?></a></p>
-                                <p class="text-muted ml20"><?php echo date('Y-m-d H:i', $blog_info['create_time']); ?></p>
+                                <p class="text-muted ml20">Date written: <?php echo date('Y-m-d H:i', $blog_info['create_time']); ?></p>
                             </div>
                         </div>
                         <div class="pull-right">
@@ -57,7 +57,7 @@ while ($row = $result->fetch_assoc()) {
                 </div>
             </div>
             <hr>
-
+<!--COMMENT SECTION OF THE BLOG-->
             <div class="p20">
                 <h3 class="blog-title mb20">Comments</h3>
                 <?php foreach ($comments as $value) { ?>
@@ -81,6 +81,8 @@ while ($row = $result->fetch_assoc()) {
             </form>
             <hr>
         </div>
+
+<!--THIS SECTION LETS USER ITERACT WITH TAG FUNCTIONS-->
         <div class="col-xs-12 col-sm-12 col-lg-3 col-md-3 p20">
             <div >
                 <a class="btn btn-default btn-sm" href="create.php">Create my Blog  <i class="glyphicon glyphicon-plus ml10"></i></a>

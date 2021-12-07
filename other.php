@@ -29,6 +29,7 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 
+<!--THIS SECTION PRINTS INFORMATION OF THE AUTHOR SELECTED-->
 <main>
     <section class="profile">
         <h2 class="sectionHeader">Author Profile</h2>
@@ -40,23 +41,8 @@ while ($row = $result->fetch_assoc()) {
                 <div class="userInfoTop">
                     <span class="userName"><?php echo $user_info['author_fname'] . ' ' . $user_info['author_lname'];?></span>
                     <?php
-                    /*
-                    if ($_SESSION['name'] === $_GET['profileId']) {
-                    echo "
-                    <button class='mainBtn'>Edit Profile</button>
-                    ";
-                    } else {
-                    echo "
-                    <button class='mainBtn'>Follow</button>
-                    ";
-                    }
-                    */
-
                     ?>
-
                     <a class="editProfileLink" href="javascript:void(0)" id="follow-author" data-author-id="<?php echo $author; ?>">Follow Author</a>
-
-
                 </div>
 
                 <div class="userInfo">
@@ -67,6 +53,8 @@ while ($row = $result->fetch_assoc()) {
             </div>
         </div>
     </section>
+
+<!--THIS SECTION PRINTS ALL BLOGS CREATED BY THE AUTHOR SELECTED-->
     <section class="recentBlogs">
         <h2 class="sectionHeader">Recent Blogs</h2>
         <hr>

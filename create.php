@@ -67,6 +67,7 @@ while ($t = $res->fetch_assoc()) {
 }
 ?>
 
+<!--THIS SECTION LETS THE USER CREATE A BLOG. USER CAN FILL OUT THE FORM AND HIT SIBMIT BUTTON TO TOGGLE SQL INPUT FUNCTION-->
 <main>
     <h6>Create Blog</h6>
 

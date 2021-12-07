@@ -16,7 +16,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
@@ -25,6 +24,8 @@
     <title>Blog</title>
 </head>
 <body>
+
+<!--THIS SECTION PRINTS NAVIGATION BAR, INCLUDED IN ALL PAGES EXCEPT REGISTER/LOGIN PAGES-->
 <div class="container p20">
     <div class="row flex-a-center flex-warp">
         <div class="col-xs-9 col-sm-9 col-lg-4 col-md-4 row" >
@@ -33,14 +34,14 @@
                     <img src="assets/img/header.png" width="50" height="50" class="b-radius-50">
                 </a>
             </div>
-            <div class="col-xs-7 col-sm-7 col-lg-7 col-md-7">
-                <h5>Blog Logo</h5>
-                <h5>Public Blog</h5>
+            <div id="header-logo-text" class="col-xs-7 col-sm-7 col-lg-7 col-md-7">
+                <a id="" href="index.php"><h5>Spider Blog</h5></a>
+                <a id="" href="index.php"><h5>Main Page</h5></a>
             </div>
         </div>
 
         <div class="hidden-xs hidden-sm col-lg-4 col-md-4"></div>
-        <div class="hidden-xs hidden-sm col-lg-2 col-md-2">
+        <div class="hidden-xs hidden-sm col-lg-2 col-md-2" id="search-text">
             <input class="form-control input-sm" type="search" placeholder="Search blogs" name="search"> <i class="glyphicon glyphicon-search search-icon-position do-search"></i>
         </div>
         <?php if (!isset($login_id)) { ?>
@@ -49,9 +50,9 @@
             <a href="register.php" class="btn btn-default btn-sm">Register</a>
         </div>
         <?php } else { ?>
-        <div class="col-xs-3 col-sm-3 col-lg-2 col-md-2">
+        <div class="col-xs-3 col-sm-3 col-lg-2 col-md-2 profile-logout" id="profile-logout">
             <a href="profile.php"><img src="assets/img/header.png" width="30" height="30" class="b-radius-50"></a>
-            <a href="includes/logout.php"><span class="ml20 hidden-xs hidden-sm"><?php echo $user_info['author_fname'] . ' ' . $user_info['author_lname']; ?></span></a>
+            <a id="logout-button" href="includes/logout.php"><span class="ml20 hidden-xs hidden-sm"><?php echo $user_info['author_fname'] . ' ' . $user_info['author_lname'].' (Log out)'; ?></span></a>
         </div>
         <?php } ?>
     </div>

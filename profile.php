@@ -5,7 +5,6 @@ require_once "includes/header.php";
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
 if (empty($user)) header('Location:index.php');
 
-
 //get recent blogs
 $data = [];
 $sql = 'select blog.*,author.author_fname, author.author_lname from blog join author on blog.author_id = author.login_id where blog.author_id = '.$login_id.' order by blog.blog_id desc limit 2';
@@ -24,36 +23,17 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 
+<!--THIS SECTION PRINTS INFORMATION OF THE AUTHOR SELECTED-->
 <main>
     <section class="profile">
         <h2 class="sectionHeader">My Profile</h2>
-
         <div class="userDetails">
             <img class="profileAvatar" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/great-ocean-road-174028267-1494616481.jpg" alt="User Avatar">
-
             <div class="userInfoWrapper">
                 <div class="userInfoTop">
                     <span class="userName"><?php echo $user_info['author_fname'] . ' ' . $user_info['author_lname'];?></span>
-                    <?php
-                    /*
-                    if ($_SESSION['name'] === $_GET['profileId']) {
-                      echo "
-                        <button class='mainBtn'>Edit Profile</button>
-                      ";
-                    } else {
-                      echo "
-                        <button class='mainBtn'>Follow</button>
-                      ";
-                    }
-                    */
-
-                    ?>
-
                     <a class="editProfileLink" href="editProfile.php">Edit Profile</a>
-
-
                 </div>
-
                 <div class="userInfo">
                     <span>Phone: <?php echo $user_info['author_phone']; ?></span>
                     <span>Email: <?php echo $user_info['author_email']; ?></span>
@@ -62,7 +42,8 @@ while ($row = $result->fetch_assoc()) {
             </div>
         </div>
     </section>
-
+    
+<!--THIS SECTION PRINTS ALL BLOGS CREATED BY THE AUTHOR SELECTED-->
     <section class="recentBlogs">
         <h2 class="sectionHeader">Recent Blogs</h2>
         <hr>

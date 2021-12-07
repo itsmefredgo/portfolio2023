@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 ?>
-
+<!--THIS SECTION WILL LET THE USER EDIT THEIR PROFILE INFORMATION-->
 <main>
   <section class="editProfile">
     <h2 class="sectionHeader">Edit Profile</h2>
