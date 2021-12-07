@@ -14,7 +14,7 @@ CREATE TABLE `user` (
   `user_id` 		INT(11) 	NOT NULL 	PRIMARY KEY 	AUTO_INCREMENT,
   `user_fname` 	VARCHAR(256)	NOT NULL,
   `user_lname` 	VARCHAR(256) 	NOT NULL,
-  `user_phone` 	VARCHAR(12) 	NOT NULL, -- 902-123-4567
+  `user_phone` 	VARCHAR(12) 	NOT NULL	UNIQUE, -- 902-123-4567
   `user_type` 	VARCHAR(256) 	NOT NULL,
   `user_intro`	VARCHAR(256) 	NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -27,8 +27,8 @@ INSERT INTO user VALUES(3,'Ben','Hoeg','902-135-2468','Role','My name is Ben, an
 
 DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login` (
-  `user_id` 			INT(11) 		NOT NULL 	PRIMARY KEY		AUTO_INCREMENT,
-  `user_email` 		VARCHAR(256) 	NOT NULL,
+  `user_id` 			INT(11) 	NOT NULL 		PRIMARY KEY		AUTO_INCREMENT,
+  `user_email` 		VARCHAR(256) 	NOT NULL		UNIQUE,
   `user_password` 	VARCHAR(256) 	NOT NULL,
   FOREIGN KEY(user_id) REFERENCES user(user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -87,7 +87,7 @@ INSERT INTO blogtag VALUES(3,3,3);
 DROP TABLE IF EXISTS `tag`;
 CREATE TABLE `tag` (
   `tag_id`		INT(11) 	NOT NULL 	PRIMARY KEY		AUTO_INCREMENT,
-  `tag_label` 	VARCHAR(11)	NOT NULL
+  `tag_label` 	VARCHAR(11)	NOT NULL	UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO tag VALUES(1,"Music");
