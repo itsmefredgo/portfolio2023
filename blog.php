@@ -1,3 +1,5 @@
+<!--AUTHOR: RUN GUO, MERGING PHP FILES-->
+
 <?php
 require_once "includes/header.php";
 
@@ -27,6 +29,8 @@ while ($row = $result->fetch_assoc()) {
 
 ?>
 
+<!--AUTHOR: RUN GUO-->
+<!--EDITOR: FREDERICK GO-->
 <!--THIS SECTION WILL PRINT A BLOG SELECTED FROM HOMEPAGE OR USER INFO PAGES. -->
 <main>
     <div class="row">
@@ -57,6 +61,10 @@ while ($row = $result->fetch_assoc()) {
                 </div>
             </div>
             <hr>
+
+<!--AUTHOR: RUN GUO-->
+<!--EDITOR: BEN HOEG-->
+<!--EDITOR: KENNEDY LANDRY-->
 <!--COMMENT SECTION OF THE BLOG-->
             <div class="p20">
                 <h3 class="blog-title mb20">Comments</h3>
@@ -82,6 +90,7 @@ while ($row = $result->fetch_assoc()) {
             <hr>
         </div>
 
+<!--AUTHOR: RUN GUO-->
 <!--THIS SECTION LETS USER ITERACT WITH TAG FUNCTIONS-->
         <div class="col-xs-12 col-sm-12 col-lg-3 col-md-3 p20">
             <div >

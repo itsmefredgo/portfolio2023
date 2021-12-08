@@ -1,6 +1,8 @@
+<!--AUTHOR: RUN GUO, MERGING PHP FILES-->
+
+<!--RECEIVING TAGS-->
 <?php
 require_once "includes/header.php";
-
 // get tags
 $sql  = 'select * from tag';
 $res = $conn->query($sql);
@@ -8,11 +10,12 @@ $tags = [];
 while ($t = $res->fetch_assoc()) {
     $tags[] = $t;
 }
-
 $tab = isset($_GET['tab']) ? intval($_GET['tab']) : 1;
 $tag = isset($_GET['tag']) ? htmlspecialchars($_GET['tag']) : '';
 $keyword = isset($_GET['keyword']) ? htmlspecialchars($_GET['keyword']) : '';
 $data = [];
+
+//AUTHOR: RUN GUO
 //THIS SECTION PRINTS BLOGS OF FOLLOWING AUTHORS ONLY, AVAILALBE FUNCTION TO LOGGED IN USERS ONLY
 switch ($tab) {
     case 2:
@@ -43,6 +46,7 @@ switch ($tab) {
         }
         break;
 
+//AUTHOR: RUN GUO
 //THIS SECTION PRINTS BLOGS THAT ARE MARKED AS READ_LATER, AVAILALBE FUNCTION TO LOGGED IN USERS ONLY
     case 3:
         //get read later blogs
@@ -74,7 +78,8 @@ switch ($tab) {
         break;
     default:
 
-    //IF NOTHING IS SELECTED, PRINTS ALL RECENT BLOGS. AVAILABLE TO ALL USERS.
+//AUTHOR: RUN GUO
+//IF NOTHING IS SELECTED, PRINTS ALL RECENT BLOGS. AVAILABLE TO ALL USERS.
         //get all blogs
         $sql = 'select blog.*,author.author_fname, author.author_lname from blog join author on blog.author_id = author.login_id order by blog.blog_id desc';
         if (!empty($keyword)) {
@@ -104,13 +109,11 @@ switch ($tab) {
             $row['tags'] = $blog_tags;
             $data[] = $row;
         }
-//      var_dump($data);
         break;
 }
-
-
 ?>
 
+<!--AUTHOR: RUN GUO-->
 <!--THIS SECTION PRINTS AND ITERACTS WITH THE USER WITH TAG FUNCTION-->
 <main>
     <div class="row">
@@ -156,6 +159,8 @@ switch ($tab) {
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-lg-3 col-md-3">
+
+<!--AUTHOR: RUN GUO-->
 <!--USER CAN CLICK HERE TO CREATE A BLOG-->
             <div >
                 <a class="btn btn-default btn-sm" href="create.php">Create my Blog  <i class="glyphicon glyphicon-plus ml10"></i></a>

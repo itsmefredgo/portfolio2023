@@ -1,5 +1,7 @@
-<?php
+<!--AUTHOR: RUN GUO-->
 
+<!--IMPLEMENTING READ_LATER FUNCTION-->
+<?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     session_start();
     require_once '../db/connect.php';

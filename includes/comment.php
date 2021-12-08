@@ -1,5 +1,7 @@
-<?php
+<!--AUTHOR: RUN GUO-->
 
+<!--INSERTING COMMENT DATA TO DATABASE-->
+<?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     session_start();
     require_once '../db/connect.php';

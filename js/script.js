@@ -1,3 +1,4 @@
+//AUTHOR: RUN GUO, GENERAL JAVASCRIPT FOR FUNCTIONS
 $(document).ready(function(){
 
     // add read later

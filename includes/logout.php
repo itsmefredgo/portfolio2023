@@ -1,3 +1,8 @@
+<!--AUTHOR: RUN GUO-->
+
+<!--LOGOUT FUNCTION FROM http://php.net/manual/en/function.session-destroy.php-->
+<!--ACCESSED ON: 2021 12 07-->
+
 <?php
 //  require_once "accessControl.php";
 

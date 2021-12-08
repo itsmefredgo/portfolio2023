@@ -1,3 +1,5 @@
+<!--AUTHOR: RUN GUO, MERGING PHP FILES-->
+
 <?php
 // DB Connection Here
 $error_msg = '';
@@ -36,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 
-<!-- Jamel's Code -->
+<!--AUTHOR: JAMEL HAMMOUD-->
+<!--EDITTED BY: RUN GUO-->
 
 <!DOCTYPE html>
 <html lang="en">

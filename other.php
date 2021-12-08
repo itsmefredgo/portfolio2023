@@ -1,3 +1,5 @@
+<!--AUTHOR: RUN GUO, MERGING PHP FILES-->
+
 <?php
 require_once "includes/header.php";
 
@@ -29,6 +31,8 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 
+<!--AUTHOR: RUN GUO-->
+<!--EDITOR: BEN HOEG-->
 <!--THIS SECTION PRINTS INFORMATION OF THE AUTHOR SELECTED-->
 <main>
     <section class="profile">
@@ -54,6 +58,9 @@ while ($row = $result->fetch_assoc()) {
         </div>
     </section>
 
+<!--AUTHOR: RUN GUO-->
+<!--EDITOR: FREDERICK GO-->
+<!--EDITOR: KENNEDY LANDRY-->
 <!--THIS SECTION PRINTS ALL BLOGS CREATED BY THE AUTHOR SELECTED-->
     <section class="recentBlogs">
         <h2 class="sectionHeader">Recent Blogs</h2>

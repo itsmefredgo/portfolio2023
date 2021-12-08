@@ -1,6 +1,7 @@
+<!--AUTHOR: RUN GUO, MERGING PHP FILES-->
+
 <?php
 require_once "includes/header.php";
-
 function get_file_name($len) {
     $new_file_name = 'S_';
     $chars = "1234567890qwertyuiopasdfghjklzxcvbnm";
@@ -14,6 +15,8 @@ if (!file_exists($upload_path)) {
     mkdir($upload_path);
 }
 
+//AUTHOR: RUN GUO
+//TAKING USER INPUTS INTO SQL DATABASE ONCE SUBMITTED
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = htmlspecialchars($_POST['title']);
     $tags = htmlspecialchars($_POST['tags']);
@@ -67,6 +70,7 @@ while ($t = $res->fetch_assoc()) {
 }
 ?>
 
+<!--AUTHOR: FREDERICK GO-->
 <!--THIS SECTION LETS THE USER CREATE A BLOG. USER CAN FILL OUT THE FORM AND HIT SIBMIT BUTTON TO TOGGLE SQL INPUT FUNCTION-->
 <main>
     <h6>Create Blog</h6>

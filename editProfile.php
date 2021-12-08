@@ -1,10 +1,10 @@
+<!--AUTHOR: RUN GUO-->
+
 <?php
 require_once "includes/header.php";
-
 //get user info
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
 if (empty($user)) header('Location:index.php');
-
 //edit profile
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fname = htmlspecialchars($_POST['fname']);
@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 ?>
+<!--AUTHOR: KENNEDY LANDRY-->
 <!--THIS SECTION WILL LET THE USER EDIT THEIR PROFILE INFORMATION-->
 <main>
   <section class="editProfile">
@@ -73,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </section>
 </main>
 
+<!--AUTHOR: RUN GUO-->
 <?php
   require_once "includes/footer.php";
 ?>
